@@ -43,6 +43,7 @@ type Peer struct {
 	sync.Mutex
 	id       string
 	closed   atomicBool
+	identity string // optionally set by signalling server, e.g. user id
 	session  *Session
 	provider SessionProvider
 
@@ -231,6 +232,18 @@ func (p *Peer) Trickle(candidate webrtc.ICECandidateInit, target int) error {
 		}
 	}
 	return nil
+}
+
+func (p *Peer) GetIdentity() string {
+	return p.identity
+}
+
+func (p *Peer) SetIdentity(ident string) {
+	p.identity = ident
+}
+
+func (p *Peer) IsIdentified() bool {
+	return p.identity != ""
 }
 
 // Close shuts down the peer connection and sends true to the done channel

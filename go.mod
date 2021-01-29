@@ -8,6 +8,7 @@ require (
 	github.com/gammazero/deque v0.0.0-20201010052221-3932da5530cc
 	github.com/gammazero/workerpool v1.1.1
 	github.com/go-logr/logr v0.4.0
+	github.com/golang/protobuf v1.4.3 // indirect
 	github.com/google/uuid v1.2.0 // indirect
 	github.com/gorilla/websocket v1.4.2
 	github.com/grpc-ecosystem/go-grpc-prometheus v1.2.0
